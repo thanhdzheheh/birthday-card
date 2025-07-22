@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy birthday</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', cursive;
+      background: url('https://drive.google.com/uc?export=download&id=1WKmM0m4FLZprBaujUPtHULg9r51u3hIm') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow: hidden;
+    }
+    .center-screen {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      text-align: center;
+    }
+    .intro, .goodbye {
+      font-size: 2rem;
+      background-color: rgba(255, 182, 193, 0.6);
+      text-shadow: 1px 1px 3px #000;
+      animation: fadeIn 2s ease-in-out;
+      padding: 20px;
+      border-radius: 20px;
+    }
+    .letter-container {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      background-color: rgba(255, 192, 203, 0.85);
+      padding: 20px;
+    }
+    .envelope {
+      background-color: #fff0f5;
+      border: 2px dashed #ff69b4;
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+      color: #333;
+      font-size: 1.2rem;
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      background-color: #ff69b4;
+      border: none;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    button:hover {
+      background-color: #ff1493;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="center-screen intro" id="intro">
+    Chao xìn nờ han chu che của elm 🫰<br />
+    <button onclick="openLetter()">💌 Open It</button>
+  </div>
+  <div class="letter-container" id="letter">
+    <div class="envelope" id="letterContent">
+      <p>Chúc chị tuổi mới thật nhiều niềm vui, xinh đẹp, đáng yêu 🧁, thẳng tiến nv1 📚 và shine on your way 🌟.<br><br>
+      Chị Nọc của em 10/10, và em rất tự hào được là một phần trong hành trình tuổi 18 của chị 🥰.<br><br>
+      Sinh nhật vui vẻ nhaaa 🎂💖</p>
+      <button onclick="closeLetter()">🔙 Vui lòng đóng thư</button>
+    </div>
+  </div>
+  <div class="center-screen goodbye hidden" id="goodbye">
+    Hẹn chị 19h23p nha 🫰
+  </div>
+  <audio id="bgm" loop autoplay>
+    <source src="https://drive.google.com/uc?export=download&id=1agi8CDKoa5lYSQapOkj8ftNbxDLITJq1" type="audio/mpeg">
+  </audio>
+  <script>
+    function openLetter() {
+      document.getElementById('intro').style.display = 'none';
+      document.getElementById('letter').style.display = 'flex';
+    }
+    function closeLetter() {
+      document.getElementById('letter').style.display = 'none';
+      document.getElementById('goodbye').classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>
